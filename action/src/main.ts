@@ -41,7 +41,7 @@ const locateQtArchDir = (installDir: string): string => {
   // a standard desktop Qt installation must exist alongside the requested architecture.
   // In these cases, we must select the first item that ends with 'android*', 'ios', 'wasm*' or 'msvc*_arm64'.
   const requiresParallelDesktop = qtArchDirs.filter((p) =>
-    p.match(/6\.\d+\.\d+\/(android[^/]*|ios|wasm[^/]*|msvc[^/]_arm64)$/)
+    p.match(/6\.\d+\.\d+\/(android[^/]*|ios|wasm[^/]*|msvc[^/]*_arm64)$/)
   );
   if (requiresParallelDesktop.length) {
     // NOTE: if multiple mobile/wasm installations coexist, this may not select the desired directory
